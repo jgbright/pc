@@ -4,7 +4,7 @@
   "description": "Craft, gather, and survive prehistoric adventures.",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "favicon.svg",
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any maskable"
