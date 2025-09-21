@@ -1,12 +1,15 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useMemo, useState } from 'react';
+import playerAvatar from '../assets/avatars/player.svg';
+import guruAvatar from '../assets/avatars/guru.svg';
+import minionAvatar from '../assets/avatars/minion.svg';
 import './MainGameScreen.css';
 const avatars = [
     {
         id: 'player',
         name: 'Kaia',
         role: 'Trailblazer',
-        icon: '🧭',
+        iconSrc: playerAvatar,
         note: 'Focused on refining ration recipes.',
         satiation: { current: 68, max: 100, warningThreshold: 25 }
     },
@@ -14,14 +17,14 @@ const avatars = [
         id: 'guru',
         name: 'Siku',
         role: 'Tribal Guru',
-        icon: '🧙\u200d♂️',
+        iconSrc: guruAvatar,
         note: 'Provides passive crafting bonuses. No hunger tracking.'
     },
     {
         id: 'minion',
         name: 'Roo',
         role: 'Gatherer',
-        icon: '🦊',
+        iconSrc: minionAvatar,
         note: 'Too hungry to explore. Must eat before resuming jobs.',
         satiation: { current: 0, max: 100, warningThreshold: 25 }
     }
@@ -261,7 +264,7 @@ export const MainGameScreen = () => {
                         : 0;
                     const isDepleted = satiation?.current === 0;
                     const isWarning = !!satiation && satiation.current > 0 && satiation.current <= satiation.warningThreshold;
-                    return (_jsxs("article", { className: `main-game-screen__avatar${isWarning ? ' is-warning' : ''}${isDepleted ? ' is-depleted' : ''}`, children: [satiation && (_jsxs("div", { className: "main-game-screen__satiation", role: "group", "aria-label": `${avatar.name} satiation`, children: [_jsx("div", { className: "main-game-screen__satiation-meter", role: "meter", "aria-valuemin": 0, "aria-valuemax": satiation.max, "aria-valuenow": satiation.current, "aria-label": `${avatar.name} satiation ${satiation.current} of ${satiation.max}`, children: _jsx("span", { className: "main-game-screen__satiation-fill", style: { width: `${satiationPercentage}%` } }) }), _jsxs("span", { className: "main-game-screen__satiation-value", children: [satiation.current, "/", satiation.max] }), isWarning && !isDepleted && (_jsx("span", { className: "main-game-screen__satiation-state", role: "status", children: "Warning: getting hungry" })), isDepleted && (_jsx("span", { className: "main-game-screen__satiation-state", role: "status", children: "Satiation empty \u2014 limited to eating actions" }))] })), _jsxs("div", { className: "main-game-screen__avatar-body", children: [_jsx("span", { className: "main-game-screen__avatar-icon", "aria-hidden": "true", children: avatar.icon }), _jsxs("div", { children: [_jsx("h2", { children: avatar.name }), _jsx("p", { className: "main-game-screen__avatar-role", children: avatar.role }), _jsx("p", { className: "main-game-screen__avatar-note", children: avatar.note })] })] })] }, avatar.id));
+                    return (_jsxs("article", { className: `main-game-screen__avatar${isWarning ? ' is-warning' : ''}${isDepleted ? ' is-depleted' : ''}`, children: [satiation && (_jsxs("div", { className: "main-game-screen__satiation", role: "group", "aria-label": `${avatar.name} satiation`, children: [_jsx("div", { className: "main-game-screen__satiation-meter", role: "meter", "aria-valuemin": 0, "aria-valuemax": satiation.max, "aria-valuenow": satiation.current, "aria-label": `${avatar.name} satiation ${satiation.current} of ${satiation.max}`, children: _jsx("span", { className: "main-game-screen__satiation-fill", style: { width: `${satiationPercentage}%` } }) }), _jsxs("span", { className: "main-game-screen__satiation-value", children: [satiation.current, "/", satiation.max] }), isWarning && !isDepleted && (_jsx("span", { className: "main-game-screen__satiation-state", role: "status", children: "Warning: getting hungry" })), isDepleted && (_jsx("span", { className: "main-game-screen__satiation-state", role: "status", children: "Satiation empty \u2014 limited to eating actions" }))] })), _jsxs("div", { className: "main-game-screen__avatar-body", children: [_jsx("img", { className: "main-game-screen__avatar-icon", src: avatar.iconSrc, alt: `${avatar.name} portrait` }), _jsxs("div", { children: [_jsx("h2", { children: avatar.name }), _jsx("p", { className: "main-game-screen__avatar-role", children: avatar.role }), _jsx("p", { className: "main-game-screen__avatar-note", children: avatar.note })] })] })] }, avatar.id));
                 }) }), _jsxs("section", { className: "main-game-screen__craft", "aria-labelledby": "craft-section-heading", children: [_jsxs("div", { className: "main-game-screen__craft-header", children: [_jsx("h2", { id: "craft-section-heading", children: "Craft work tray" }), _jsx("p", { children: "Drag ingredients or tools from the inventory into the tray. Recipes validate server-side; the preview shows the guaranteed outcome before crafting." })] }), _jsxs("div", { className: "main-game-screen__tray", children: [_jsxs("div", { className: "main-game-screen__tray-columns", children: [_jsxs("div", { className: "main-game-screen__tray-column", "aria-label": "Ingredient slots", children: [_jsx("h3", { children: "Ingredients" }), _jsx("div", { className: "main-game-screen__tray-grid", children: craftIngredients.map((ingredient) => (_jsxs("div", { className: "main-game-screen__tray-slot", children: [_jsx("span", { className: "main-game-screen__tray-icon", "aria-hidden": "true", children: ingredient.icon }), _jsx("span", { className: "main-game-screen__tray-label", children: ingredient.name }), _jsxs("span", { className: "main-game-screen__tray-qty", children: ["x", ingredient.quantity] })] }, ingredient.id))) })] }), _jsxs("div", { className: "main-game-screen__tray-column", "aria-label": "Tool slot", children: [_jsx("h3", { children: "Tool" }), _jsxs("div", { className: "main-game-screen__tray-slot main-game-screen__tray-slot--tool", children: [_jsx("span", { className: "main-game-screen__tray-icon", "aria-hidden": "true", children: craftTool.icon }), _jsx("span", { className: "main-game-screen__tray-label", children: craftTool.name }), _jsxs("span", { className: "main-game-screen__tray-durability", "aria-label": "Tool durability", children: ["Durability ", craftTool.durability.current, "/", craftTool.durability.max] })] })] }), _jsxs("div", { className: "main-game-screen__tray-column", "aria-label": "Preview output", children: [_jsx("h3", { children: "Preview" }), _jsxs("div", { className: "main-game-screen__tray-slot main-game-screen__tray-slot--preview", children: [_jsx("span", { className: "main-game-screen__tray-icon", "aria-hidden": "true", children: craftPreview.icon }), _jsxs("div", { className: "main-game-screen__tray-preview-info", children: [_jsx("span", { className: "main-game-screen__tray-label", children: craftPreview.name }), _jsxs("span", { className: "main-game-screen__tray-qty", children: ["x", craftPreview.quantity] }), _jsxs("span", { className: "main-game-screen__tray-meta", children: ["Energy cost: ", craftPreview.energyCost] }), _jsxs("span", { className: "main-game-screen__tray-meta", children: ["Byproducts: ", craftPreview.byproducts.join(', ')] })] })] })] })] }), _jsxs("div", { className: "main-game-screen__tray-actions", children: [_jsxs("button", { type: "button", className: "main-game-screen__craft-button", children: ["Craft (", craftTimeSeconds, "s)"] }), _jsx("div", { className: "main-game-screen__tray-status", role: "status", children: craftingStatuses.map((status) => (_jsx("p", { className: `main-game-screen__tray-message is-${status.type}`, children: status.message }, status.id))) })] })] }), _jsxs("aside", { className: "main-game-screen__recipes", "aria-label": "Highlighted recipes", children: [_jsx("h3", { children: "Recipe spotlight" }), _jsx("p", { children: "Category filters highlight relevant crafting flows." }), _jsx("ul", { children: recipeSpotlight.map((recipe) => {
                                     const isHighlighted = activeCategory === 'all' || recipe.category === activeCategory;
                                     return (_jsxs("li", { className: `main-game-screen__recipe${isHighlighted ? ' is-highlighted' : ''}`, children: [_jsx("strong", { children: recipe.name }), _jsx("span", { children: recipe.summary })] }, recipe.id));
