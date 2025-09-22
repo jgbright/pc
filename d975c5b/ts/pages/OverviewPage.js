@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Link } from 'react-router-dom';
+export const OverviewPage = () => {
+    return (_jsxs("section", { className: "page hero", "aria-labelledby": "overview-heading", children: [_jsxs("div", { className: "hero-content", children: [_jsx("h1", { id: "overview-heading", children: "Discover why PaleoCraft is pure prehistoric joy" }), _jsx("p", { children: "PaleoCraft is a cozy survival sandbox where you befriend dinosaurs, uncover ancient secrets, and build whimsical camps with friends. Every expedition is designed to be playful, surprising, and packed with stories you'll want to share the moment you log off." }), _jsx(Link, { className: "cta", to: "/features", "aria-label": "Explore the world of PaleoCraft", children: "Explore the world" })] }), _jsxs("div", { className: "hero-side", children: [_jsx("p", { className: "hero-stat", children: "10 vibrant biomes to roam" }), _jsx("p", { className: "hero-stat", children: "Friendly dinosaurs with unique personalities" }), _jsx("p", { className: "hero-stat", children: "Cozy co-op crafting for up to four players" })] })] }));
+};
+//# sourceMappingURL=OverviewPage.js.map
