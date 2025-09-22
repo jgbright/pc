@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export const OverviewPage = () => {
+    return (_jsxs("section", { className: "page hero", "aria-labelledby": "overview-heading", children: [_jsxs("div", { className: "hero-content", children: [_jsx("h1", { id: "overview-heading", children: "Craft prehistoric adventures for modern players" }), _jsx("p", { children: "PaleoCraft blends survival gameplay with hands-on crafting to help families explore paleontology together. The marketing site highlights the core experience and how your team can bring the world of PaleoCraft to classrooms, community events, and living rooms." }), _jsx("a", { className: "cta", href: "#contact", "aria-label": "Connect with the PaleoCraft team", children: "Talk with the team" })] }), _jsxs("div", { className: "hero-side", children: [_jsx("p", { className: "hero-stat", children: "120+ handcrafted recipes" }), _jsx("p", { className: "hero-stat", children: "STEM-aligned adventure loops" }), _jsx("p", { className: "hero-stat", children: "Playable across web and mobile" })] })] }));
+};
+//# sourceMappingURL=OverviewPage.js.map
