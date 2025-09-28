@@ -1,0 +1,11 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Link } from 'react-router-dom';
+const heroHighlights = [
+    'Team up for bite-sized expeditions that evolve with the weather.',
+    'Befriend dinos with handcrafted treats and goofy dance-offs.',
+    'Shape cozy camps that glow with memories from every session.'
+];
+export const OverviewPage = () => {
+    return (_jsxs("section", { className: "page hero", "aria-labelledby": "overview-heading", children: [_jsxs("div", { className: "hero-content", children: [_jsx("span", { className: "hero-badge", children: "Craft. Explore. Laugh." }), _jsx("h1", { id: "overview-heading", children: "Chisel your story in PaleoCraft's living sandbox" }), _jsx("p", { children: "PaleoCraft is a playful prehistoric survival game where tinkering trumps grinding. Roam vibrant biomes, experiment with whimsical crafting blueprints, and share discoveries with friends who love swapping tall tales under pixel-perfect stars." }), _jsxs("div", { className: "hero-actions", children: [_jsx(Link, { className: "cta", to: "/adventures", children: "See the adventures" }), _jsx(Link, { className: "cta ghost", to: "/community", children: "Meet the community" })] }), _jsx("ul", { className: "hero-highlights", children: heroHighlights.map((highlight) => (_jsx("li", { children: highlight }, highlight))) })] }), _jsxs("div", { className: "hero-side hero-illustration", "aria-hidden": "true", children: [_jsxs("div", { className: "snapshot-card", children: [_jsx("p", { className: "snapshot-label", children: "Tonight's spotlight" }), _jsx("h3", { children: "Amberlight Ridge" }), _jsx("p", { className: "snapshot-detail", children: "Hunt for comet shards, calm a skittish stegosaur, and carve glowing runes into your campsite to unlock secret emotes." }), _jsx("p", { className: "snapshot-reward", children: "Keepsake: Emberglow Glider blueprint" })] }), _jsx("p", { className: "hero-caption", children: "Expeditions refresh daily with new moods, fauna, and puzzles to share with your crew." })] })] }));
+};
+//# sourceMappingURL=OverviewPage.js.map
